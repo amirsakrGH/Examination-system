@@ -16,6 +16,7 @@ namespace Demo.Questions
         public float Mark { get; set; }
         public Answer[] AnswerList { get; set; } // Options
         public Answer CorrectAnswer { get; set; }
+        public byte UserAnswerId {  get; set; }
         #endregion
 
         #region Methods
@@ -27,7 +28,7 @@ namespace Demo.Questions
             {
                 Console.WriteLine(answer);
             }
-            Console.WriteLine("-------------------------------------");
+            
         }
         #endregion
 

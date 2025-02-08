@@ -21,17 +21,18 @@ namespace Demo.Exams
             {
                 base.Question[i].ShowQuestion();
                 Console.WriteLine("Please Enter The Answer Id: ");
-                byte.TryParse(Console.ReadLine(), out byte answerId);
-
+                byte.TryParse(Console.ReadLine(), out byte inputId);
+                Console.WriteLine("-------------------------------------");
+                base.Question[i].UserAnswerId = inputId;
             }
 
             Console.Clear();
 
             for (int i = 0; i < Question.Length; i++)
             {
-                Console.WriteLine($"Question {i + 1}: {Question[i]}");
-                Console.WriteLine($"Your Answer: ");
-                Console.WriteLine($"Right Answer: {Question[i].CorrectAnswer.AnswerText}");
+                Console.WriteLine($"Question {i + 1}: {Question[i].BodyOfQuestion}");
+                Console.WriteLine($"Your Answer: {Question[i].UserAnswerId}");
+                Console.WriteLine($"Right Answer: {Question[i].CorrectAnswer.AnswerId}");
                 Console.WriteLine("-----------------------------------------");
             }
 
