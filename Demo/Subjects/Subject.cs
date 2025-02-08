@@ -62,6 +62,15 @@ namespace Demo.Subjects
             }
 
 
+            if (typeOfExam == 1)
+            {
+                Exam = new PracticalExam(TimeOFExam,numberOfQuestions);
+            }
+            else if (typeOfExam == 2)
+            {
+
+            }
+
         }
 
     }
