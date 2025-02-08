@@ -17,9 +17,22 @@ namespace Demo.Exams
         public override void ShowExam()
         {
             Console.WriteLine("Practical Exam");
-            foreach (var item in Question)
+            for (int i = 0; i < base.Question.Length; i++)
             {
-                Console.WriteLine($"{item.HeaderOfQuestion}: {item.CorrectAnswer.AnswerText}");
+                base.Question[i].ShowQuestion();
+                Console.WriteLine("Please Enter The Answer Id: ");
+                byte.TryParse(Console.ReadLine(), out byte answerId);
+
+            }
+
+            Console.Clear();
+
+            for (int i = 0; i < Question.Length; i++)
+            {
+                Console.WriteLine($"Question {i + 1}: {Question[i]}");
+                Console.WriteLine($"Your Answer: ");
+                Console.WriteLine($"Right Answer: {Question[i].CorrectAnswer.AnswerText}");
+                Console.WriteLine("-----------------------------------------");
             }
 
         }

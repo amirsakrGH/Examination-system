@@ -21,13 +21,13 @@ namespace Demo.Questions
         #region Methods
         public void ShowQuestion()
         {
-            Console.WriteLine($"{HeaderOfQuestion} \t\t\t {Mark}");
+            Console.WriteLine($"{HeaderOfQuestion}\t\t\t{Mark} points");
             Console.WriteLine($"{BodyOfQuestion}");
             foreach (Answer answer in AnswerList)
             {
                 Console.WriteLine(answer);
             }
-
+            Console.WriteLine("-------------------------------------");
         }
         #endregion
 
