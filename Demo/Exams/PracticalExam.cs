@@ -10,7 +10,9 @@ namespace Demo.Exams
     internal class PracticalExam : Exam
     {
 
-        public PracticalExam(int time, int numberOfQuestion) : base(time, numberOfQuestion) { }
+        public PracticalExam(byte time, byte numberOfQuestion, Question[] question) : base(time, numberOfQuestion, question)
+        {
+        }
 
         public override void ShowExam()
         {

@@ -9,14 +9,19 @@ namespace Demo
     {
         static void Main(string[] args)
         {
-            //0 - 255
-            //Console.WriteLine("Please Enter The Type Of Exam (1 For Practical | 2 For Final)");
-            //Byte.TryParse(Console.ReadLine(), out byte typeOfExam);
-            //Console.WriteLine("Please Enter Time For Exam From (30 min to 180 min)");
-            //Byte.TryParse(Console.ReadLine(), out byte TimeOFExam);
-            //Console.WriteLine("Please Enter The Number Of Questions");
-            //Byte.TryParse(Console.ReadLine(), out byte numberOfQuestions);
+            Subject subject = new Subject();
+            subject.CreateExam();
 
+            Console.WriteLine("Do You Want To Strat Exam (Y|N)");
+            Char.TryParse(Console.ReadLine(), out char start);
+            if (start == 'Y' || start == 'y')
+            {
+                subject.Exam.ShowExam();
+            }
+            else if (start == 'N' ||  start == 'n')
+            {
+                return;
+            }
 
 
 

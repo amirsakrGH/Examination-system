@@ -64,11 +64,11 @@ namespace Demo.Subjects
 
             if (typeOfExam == 1)
             {
-                Exam = new PracticalExam(TimeOFExam,numberOfQuestions);
+                Exam = new PracticalExam(TimeOFExam,numberOfQuestions, questions);
             }
             else if (typeOfExam == 2)
             {
-
+                Exam = new FinalExam(TimeOFExam,numberOfQuestions, questions);
             }
 
         }

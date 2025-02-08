@@ -9,7 +9,7 @@ namespace Demo.Exams
 {
     internal class FinalExam : Exam
     {
-        public FinalExam(int time, int numberOfQuestion) : base(time, numberOfQuestion)
+        public FinalExam(byte time, byte numberOfQuestion, Question[] question) : base(time, numberOfQuestion, question)
         {
         }
 
