@@ -13,18 +13,34 @@ namespace Demo.Questions
 
         public static TrueFalseQuestion CreateTFQ()
         {
+            bool flag;
             Console.WriteLine("True | False Question");
-            Console.WriteLine("Please Enter Question Body");
-            string? body = Console.ReadLine();
-            Console.WriteLine("Please Enter Question mark");
-            float.TryParse(Console.ReadLine(), out float mark);
+            string? body;
+            do
+            {
+                Console.WriteLine("Please Enter Question Body");
+                body = Console.ReadLine();
+            } while (string.IsNullOrWhiteSpace(body));
+            float mark;
+            do
+            {
+                Console.WriteLine("Please Enter Question mark");
+                flag = float.TryParse(Console.ReadLine(), out mark);
+                if (flag && mark > 0)
+                    break;
+            } while (true);
             Answer[] answer =
             {
                 new Answer(1, "True"),
                 new Answer(2, "False")
             };
-            Console.WriteLine("Please Enter The Right Answer Id (1 For True | 2 For False)");
-            Byte.TryParse(Console.ReadLine(), out byte rightAnswer);
+            byte rightAnswer;
+            do
+            {
+                Console.WriteLine("Please Enter The Right Answer Id (1 For True | 2 For False)");
+                flag = Byte.TryParse(Console.ReadLine(), out rightAnswer);
+                if (flag && (rightAnswer == 1 || rightAnswer == 2)) break;
+            } while (true);
             return new TrueFalseQuestion()
             {
                 HeaderOfQuestion = "True | False Question",

@@ -15,11 +15,33 @@ namespace Demo.Exams
 
         public override void ShowExam()
         {
+            byte grade = 0;
             Console.WriteLine("Final Exam");
-            foreach (var item in Question)
+            for (int i = 0; i < base.Question.Length; i++)
             {
-                Console.WriteLine($"{item.HeaderOfQuestion}: {item.CorrectAnswer.AnswerText}       ({item.Mark})");
+                base.Question[i].ShowQuestion();
+                Console.WriteLine("Please Enter The Answer Id: ");
+                byte.TryParse(Console.ReadLine(), out byte inputId);
+                Console.WriteLine("-------------------------------------");
+                base.Question[i].UserAnswerId = inputId;
+                if (inputId == base.Question[i].CorrectAnswer.AnswerId)
+                {
+                    ++grade;
+                }
             }
+
+            Console.Clear();
+
+            for (int i = 0; i < Question.Length; i++)
+            {
+                Console.WriteLine($"Question {i + 1}: {Question[i].BodyOfQuestion}");
+                Console.WriteLine($"Your Answer: {Question[i].UserAnswerId}");
+                Console.WriteLine($"Right Answer: {Question[i].CorrectAnswer.AnswerId}");
+                Console.WriteLine($"Time: ");
+                Console.WriteLine("-----------------------------------------");
+            }
+            Console.WriteLine($"Your Grade is {grade} from {Question.Length}");
+
         }
     }
 }
