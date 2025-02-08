@@ -89,7 +89,7 @@ namespace Demo.Subjects
                 else if (typeOfExam == 2) //Final Exam
                 {
                     Console.Clear();
-                    Console.WriteLine("Please Enter Type Of Quetion (1 For MCQ | 2 For TFQ)");
+                    Console.WriteLine("Please Enter Type Of Question (1 For MCQ | 2 For TFQ)");
                     byte typeOfQuestion;
                     do
                     {

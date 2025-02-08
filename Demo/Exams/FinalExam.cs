@@ -1,6 +1,8 @@
 ﻿using Demo.Questions;
+using Demo.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +17,15 @@ namespace Demo.Exams
 
         public override void ShowExam()
         {
+
             bool flag;
             byte grade = 0;
             Console.WriteLine("Final Exam");
+
             for (int i = 0; i < base.Question.Length; i++)
             {
+                //if (Utility.TimeUp(Time)) break;
+
                 base.Question[i].ShowQuestion();
                 byte inputId;
                 do
@@ -35,6 +41,7 @@ namespace Demo.Exams
                 {
                     ++grade;
                 }
+                
             }
 
             Console.Clear();
@@ -44,11 +51,13 @@ namespace Demo.Exams
                 Console.WriteLine($"Question {i + 1}: {Question[i].BodyOfQuestion}");
                 Console.WriteLine($"Your Answer: {Question[i].UserAnswerId}");
                 Console.WriteLine($"Right Answer: {Question[i].CorrectAnswer.AnswerId}");
-                Console.WriteLine($"Time: ");
+                //Console.WriteLine($"Time: {Utility.TimeLeft}");
                 Console.WriteLine("-----------------------------------------");
             }
             Console.WriteLine($"Your Grade is {grade} from {Question.Length}");
 
         }
+
+        
     }
 }
