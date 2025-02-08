@@ -16,18 +16,19 @@ namespace Demo.Questions
         public float Mark { get; set; }
         public Answer[] AnswerList { get; set; } // Options
         public Answer CorrectAnswer { get; set; }
+        public byte UserAnswerId {  get; set; }
         #endregion
 
         #region Methods
         public void ShowQuestion()
         {
-            Console.WriteLine($"{HeaderOfQuestion} \t\t\t {Mark}");
+            Console.WriteLine($"{HeaderOfQuestion}\t\t\t{Mark} points");
             Console.WriteLine($"{BodyOfQuestion}");
             foreach (Answer answer in AnswerList)
             {
                 Console.WriteLine(answer);
             }
-
+            
         }
         #endregion
 

@@ -17,11 +17,11 @@ namespace Demo.Exams
         #endregion
 
         #region Constructor
-        protected Exam(byte time, byte numberOfQuestion)
+        protected Exam(byte time, byte numberOfQuestion, Question[] question)
         {
             Time = time;
             NumberOfQuestion = numberOfQuestion;
-            Question = new Question[numberOfQuestion];
+            Question = question;
 
         }
         #endregion

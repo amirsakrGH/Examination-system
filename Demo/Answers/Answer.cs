@@ -22,5 +22,10 @@ namespace Demo.Answers
             AnswerText = answerText;
         }
 
+        public override string ToString()
+        {
+            return $"{AnswerId}- {AnswerText}";
+        }
+
     }
 }
