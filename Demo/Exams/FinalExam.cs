@@ -19,7 +19,7 @@ namespace Demo.Exams
         {
 
             bool flag;
-            byte grade = 0;
+            byte grade = 0; 
             Console.WriteLine("Final Exam");
 
             for (int i = 0; i < base.Question.Length; i++)
