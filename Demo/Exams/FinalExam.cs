@@ -15,13 +15,20 @@ namespace Demo.Exams
 
         public override void ShowExam()
         {
+            bool flag;
             byte grade = 0;
             Console.WriteLine("Final Exam");
             for (int i = 0; i < base.Question.Length; i++)
             {
                 base.Question[i].ShowQuestion();
-                Console.WriteLine("Please Enter The Answer Id: ");
-                byte.TryParse(Console.ReadLine(), out byte inputId);
+                byte inputId;
+                do
+                {
+                    Console.WriteLine("Please Enter The Answer Id: ");
+                    flag = byte.TryParse(Console.ReadLine(), out inputId);
+                    if (flag && (inputId > 0 && inputId < 4)) break;
+
+                } while (true);
                 Console.WriteLine("-------------------------------------");
                 base.Question[i].UserAnswerId = inputId;
                 if (inputId == base.Question[i].CorrectAnswer.AnswerId)

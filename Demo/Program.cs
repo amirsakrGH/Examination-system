@@ -16,6 +16,7 @@ namespace Demo
             Char.TryParse(Console.ReadLine(), out char start);
             if (start == 'Y' || start == 'y')
             {
+                Console.Clear();
                 subject.Exam.ShowExam();
             }
             else if (start == 'N' ||  start == 'n')
